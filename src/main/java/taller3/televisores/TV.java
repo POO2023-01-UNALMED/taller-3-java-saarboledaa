@@ -55,11 +55,6 @@ public class TV {
 			}
 		}
 	}
-	
-	public static void main(String args[]) {
-		Marca marca =  new Marca("Semsung");
-		System.out.println(marca.getNombre());
-	}
 
 	public Marca getMarca() {
 		return marca;
@@ -74,7 +69,11 @@ public class TV {
 	}
 
 	public void setCanal(int canal) {
-		this.canal = canal;
+		if (this.estado == true) {
+			if (canal <= 120 && canal >= 0) {
+				this.canal = canal;
+			}
+		}
 	}
 
 	public int getPrecio() {
